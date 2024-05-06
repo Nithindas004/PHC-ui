@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 
 const Form = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | { message: string }>(""); // Set initial state as an empty string
   const [userData, setUserData] = useState({
     username: "",
     password: "",
@@ -16,19 +16,21 @@ const Form = () => {
     username: "",
     password: "",
   });
-  console.log(workerData, "workerData");
+  // console.log(workerData, "workerData");
   const [res, setRes] = useState<any>();
   const [isWorker, setIsWorker] = useState(false);
-  console.log(res, "res");
+  // console.log(res, "res");
   const handleSubmit = async () => {
     try {
       const res = await login(userData); // Use userData for login
-      if (res) {
+      if (!res) {
+        setError("Incorrect Username or Password.");
+      } else {
         setRes(res);
         const adminId = res?.data?._id;
         Cookies.set("adminId", adminId);
         setLoggedIn(true); // Set loggedIn to true upon successful login
-      }
+      }
     } catch (error: any) {
       setError(error); // Set error state if login fails
     }
@@ -36,17 +38,18 @@ const Form = () => {
   const handleWorkerSubmit = async () => {
     try {
       const res = await loginWorker(workerData); // Use userData for login
-      setRes(res);
-      setLoggedIn(true);
-      const workerId = res?.data?._id; // Get the worker's ID from the response
-      Cookies.set("workerId", workerId);// Set loggedIn to true upon successful login
-      
+      if (!res) {
+        setError("Incorrect Username or Password.");
+      } else {
+        setRes(res);
+        setLoggedIn(true);
+        const workerId = res?.data?._id; // Get the worker's ID from the response
+        Cookies.set("workerId", workerId); // Set loggedIn to true upon successful login
+      }
     } catch (error: any) {
       setError(error); // Set error state if login fails
     }
   };
-
-  
 
   if (loggedIn && res?.data?.role === "admin") {
     // Redirect to home page if logged in
@@ -91,8 +94,11 @@ const Form = () => {
               />
             </div>
             {error && (
-              <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+              <p style={{ color: "red", textAlign: "center" }}>
+                {typeof error === "object" ? error.message : error}
+              </p>
             )}
+
             <div className="flex my-3 mt-6">
               <button
                 type="button"
@@ -132,8 +138,11 @@ const Form = () => {
               />
             </div>
             {error && (
-              <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+              <p style={{ color: "red", textAlign: "center" }}>
+                {typeof error === "object" ? error.message : error}
+              </p>
             )}
+
             <div className="flex my-3 mt-6">
               <button
                 type="button"
