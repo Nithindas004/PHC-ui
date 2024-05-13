@@ -8,6 +8,7 @@ import {
   Radio,
   MenuItem,
   Select,
+  InputLabel,
 } from "@mui/material";
 import styled from "styled-components";
 interface props {
@@ -46,7 +47,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           />
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Gender</span>
+          <span><b>Gender</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="M"
@@ -71,9 +72,10 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
+        <InputLabel id="demo-simple-select-label">Date of Birth</InputLabel>
           <TextField
             id="outlined-basic"
-            label="DOB"
+            type="date"
             variant="outlined"
             fullWidth
             name="dob"
@@ -93,7 +95,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           />
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Married</span>
+          <span><b>Married</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -118,7 +120,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Job</span>
+          <span><b>Job</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -143,14 +145,14 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={8} md={8}>
-          <span>Disability</span>
+          <span style={{fontSize:"20px"}}><b>Disability</b></span>
           <div style={{ display: "flex" }}>
             <StyledRadio
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="yes"
               name="radio-buttons-group"
             >
-              <span>Mental Illness</span>
+              <span><b>Mental Illness</b></span>
               <FormControlLabel
                 value="yes"
                 control={<Radio />}
@@ -173,7 +175,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
               defaultValue="yes"
               name="radio-buttons-group"
             >
-              <span>From Birth</span>
+              <span><b>From Birth</b></span>
               <FormControlLabel
                 value="yes"
                 control={<Radio />}
@@ -194,14 +196,14 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </div>
         </Grid>
         <Grid item xs={12} sm={8} md={8}>
-          <span>Blindness</span>
+          <span style={{fontSize:"20px"}}><b>Blindness</b></span>
           <div style={{ display: "flex" }}>
             <StyledRadio
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="yes"
               name="radio-buttons-group"
             >
-              <span>Accident</span>
+              <span><b>Accident</b></span>
               <FormControlLabel
                 value="yes"
                 control={<Radio />}
@@ -224,7 +226,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
               defaultValue="yes"
               name="radio-buttons-group"
             >
-              <span>Complete</span>
+              <span><b>Complete</b></span>
               <FormControlLabel
                 value="yes"
                 control={<Radio />}
@@ -247,7 +249,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
               defaultValue="yes"
               name="radio-buttons-group"
             >
-              <span>partial</span>
+              <span><b>partial</b></span>
               <FormControlLabel
                 value="yes"
                 control={<Radio />}
@@ -268,7 +270,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </div>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Spectacles</span>
+          <span><b>Spectacles</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -293,14 +295,14 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={8} md={8}>
-          <span>Tobacco</span>
+          <span style={{fontSize:"20px"}}><b>Tobacco</b></span>
           <div style={{ display: "flex" }}>
             <StyledRadio
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="yes"
               name="radio-buttons-group"
             >
-              <span>Smoking</span>
+              <span><b>Smoking</b></span>
               <FormControlLabel
                 value="yes"
                 control={<Radio />}
@@ -323,7 +325,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
               defaultValue="yes"
               name="radio-buttons-group"
             >
-              <span>Chewing</span>
+              <span><b>Chewing</b></span>
               <FormControlLabel
                 value="yes"
                 control={<Radio />}
@@ -344,7 +346,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </div>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Alcohol</span>
+          <span><b>Alcohol</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -369,7 +371,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Emigrant</span>
+          <span><b>Emigrant</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -394,7 +396,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Other Info</span>
+          <span><b>Other Info</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -419,6 +421,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
+        <InputLabel id="demo-simple-select-label">vaccination</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -434,7 +437,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </Select>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Blood Pressure</span>
+          <span><b>Blood Pressure</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -459,7 +462,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Diabetes</span>
+          <span><b>Diabetes</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -484,7 +487,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Asthma</span>
+          <span><b>Asthma</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -509,7 +512,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Epilepsy</span>
+          <span><b>Epilepsy</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -534,7 +537,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Cancer</span>
+          <span><b>Cancer</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -559,7 +562,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Heart Disease</span>
+          <span><b>Heart Disease</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -584,7 +587,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Mental Retardation</span>
+          <span><b>Mental Retardation</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -609,7 +612,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>TB</span>
+          <span><b>TB</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -634,7 +637,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Stroke</span>
+          <span><b>Stroke</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -659,7 +662,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Liver Disease</span>
+          <span><b>Liver Disease</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -684,7 +687,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           </StyledRadio>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Dialysis</span>
+          <span><b>Dialysis</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"
@@ -720,7 +723,7 @@ const MemberForm = ({ newMember, handleMemberChange }: props) => {
           />
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
-          <span>Covid Vaccination</span>
+          <span><b>Covid Vaccination</b></span>
           <StyledRadio
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="no"

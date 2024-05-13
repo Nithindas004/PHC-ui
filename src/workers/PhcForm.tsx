@@ -581,10 +581,10 @@ function PhcForm() {
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
+            <InputLabel id="demo-simple-select-label">Job Type</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                label="Job Type"
                 fullWidth
                 name="jobType"
                 value={formData.jobType}
