@@ -34,7 +34,7 @@ function Phc() {
       <div style={{ display: "flex", justifyContent: "end", padding: "10px" }}>
         <a
           style={{ background: "#8acfff", padding: "10px" , borderRadius: '10px'}}
-          href="http://localhost:8000/api/v1/admin/download-surveys"
+          href="http://localhost:3000/api/v1/admin/download-surveys"
         >
           Dowload Survey
         </a>
