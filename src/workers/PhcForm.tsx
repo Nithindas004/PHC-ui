@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 import {
   MenuItem,
   Select,
@@ -11,6 +11,7 @@ import {
   DialogContent,
   Button,
   InputLabel,
+  SelectChangeEvent,
 } from "@mui/material";
 import styled from "styled-components";
 import MemberForm from "./memberForm";
@@ -97,7 +98,7 @@ function PhcForm() {
   };
   const [formData, setFormData] = useState(defautValue);
   console.log(formData, "formData");
-  const handleChange = (e: SyntheticEvent<Element, Event>) => {
+  const handleChange = (e: SelectChangeEvent<string>) => {
     const { name, value } = e.target;
     const nameParts = name.split(".");
 
@@ -172,7 +173,7 @@ function PhcForm() {
 
   const [memberForms, setMemberForms] = useState<MemberData[]>([]);
   console.log(memberForms, "memberForms");
-  const handleMemberChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleMemberChange = (e: SelectChangeEvent<string>, index: number) => {
     const { name, value } = e.target;
     const updatedMemberForms = [...memberForms];
     const nameParts = name.split(".");
