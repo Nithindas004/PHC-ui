@@ -623,7 +623,6 @@ function PhcForm() {
         <DialogTitle id="alert-dialog-title">Diabetes Preditions</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-           <PredictionComponent closeModal={closeModal}/>
           </DialogContentText>
         </DialogContent>
       </Dialog>
