@@ -173,7 +173,7 @@ function PhcForm() {
 
   const [memberForms, setMemberForms] = useState<MemberData[]>([]);
   console.log(memberForms, "memberForms");
-  const handleMemberChange = (e: SelectChangeEvent<string>, index: number) => {
+  const handleMemberChange = (e, index: number) => {
     const { name, value } = e.target;
     const updatedMemberForms = [...memberForms];
     const nameParts = name.split(".");
@@ -274,7 +274,7 @@ function PhcForm() {
                 fullWidth
                 name="surveyNumber"
                 value={formData.surveyNumber}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -285,7 +285,7 @@ function PhcForm() {
                 fullWidth
                 name="owner"
                 value={formData.owner}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -296,7 +296,7 @@ function PhcForm() {
                 fullWidth
                 name="houseNumber"
                 value={formData.houseNumber}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -307,7 +307,7 @@ function PhcForm() {
                 fullWidth
                 name="houseName"
                 value={formData.houseName}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -318,7 +318,7 @@ function PhcForm() {
                 fullWidth
                 name="mobile"
                 value={formData.mobile}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -329,7 +329,7 @@ function PhcForm() {
                 fullWidth
                 name="houseType"
                 value={formData.houseType}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -340,7 +340,7 @@ function PhcForm() {
                 fullWidth
                 name="religion"
                 value={formData.religion}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -351,7 +351,7 @@ function PhcForm() {
                 fullWidth
                 name="caste"
                 value={formData.caste}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -362,7 +362,7 @@ function PhcForm() {
                 fullWidth
                 name="income"
                 value={formData.income}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -373,7 +373,7 @@ function PhcForm() {
                 fullWidth
                 name="rationCard"
                 value={formData.rationCard}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <MenuItem value={"BPL"}>BPL</MenuItem>
                 <MenuItem value={"Apl"}>APL</MenuItem>
@@ -387,7 +387,7 @@ function PhcForm() {
                 fullWidth
                 name="scst"
                 value={formData.scst}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <MenuItem value={"yes"}>Yes</MenuItem>
                 <MenuItem value={"no"}>No</MenuItem>
@@ -402,7 +402,7 @@ function PhcForm() {
                 fullWidth
                 name="waterSource"
                 value={formData.waterSource}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <MenuItem value={"well"}>Well</MenuItem>
                 <MenuItem value={"tap"}>Tap</MenuItem>
@@ -419,7 +419,7 @@ function PhcForm() {
                 fullWidth
                 name="toilet"
                 value={formData.toilet}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <MenuItem value={"pit"}>Pit</MenuItem>
                 <MenuItem value={"septicTank"}>Septic Tank</MenuItem>
@@ -441,7 +441,7 @@ function PhcForm() {
                     label="Yes"
                     name="nearby.pond"
                     checked={formData.nearby.pond === "yes"}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   />
                   <FormControlLabel
                     value="no"
@@ -449,7 +449,7 @@ function PhcForm() {
                     label="No"
                     name="nearby.pond"
                     checked={formData.nearby.pond === "no"}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   />
                 </StyledRadio>
                 <StyledRadio
@@ -465,7 +465,7 @@ function PhcForm() {
                     label="Yes"
                     name="nearby.stream"
                     checked={formData.nearby.stream === "yes"}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   />
                   <FormControlLabel
                     value="no"
@@ -473,7 +473,7 @@ function PhcForm() {
                     label="No"
                     name="nearby.stream"
                     checked={formData.nearby.stream === "no"}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   />
                 </StyledRadio>
                 <StyledRadio
@@ -489,7 +489,7 @@ function PhcForm() {
                     label="Yes"
                     name="nearby.garbage"
                     checked={formData.nearby.garbage === "yes"}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   />
                   <FormControlLabel
                     value="no"
@@ -497,7 +497,7 @@ function PhcForm() {
                     label="No"
                     name="nearby.garbage"
                     checked={formData.nearby.garbage === "no"}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   />
                 </StyledRadio>
                 <StyledRadio
@@ -513,7 +513,7 @@ function PhcForm() {
                     label="Yes"
                     name="nearby.wasteWater"
                     checked={formData.nearby.wasteWater === "yes"}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   />
                   <FormControlLabel
                     value="no"
@@ -521,7 +521,7 @@ function PhcForm() {
                     label="No"
                     name="nearby.wasteWater"
                     checked={formData.nearby.wasteWater === "no"}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   />
                 </StyledRadio>
               </div>
@@ -540,7 +540,7 @@ function PhcForm() {
                   label="Yes"
                   name="cattle"
                   checked={formData.cattle === "yes"}
-                  onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
                 />
                 <FormControlLabel
                   value="no"
@@ -548,7 +548,7 @@ function PhcForm() {
                   label="No"
                   name="cattle"
                   checked={formData.cattle === "no"}
-                  onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
                 />
               </StyledRadio>
             </Grid>
@@ -560,7 +560,7 @@ function PhcForm() {
                 fullWidth
                 name="wasteManagement"
                 value={formData.wasteManagement}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <MenuItem value={"compost"}>Compost</MenuItem>
                 <MenuItem value={"bioGas"}>Bio Gas</MenuItem>
@@ -576,7 +576,7 @@ function PhcForm() {
                 fullWidth
                 name="workingMembers"
                 value={formData.workingMembers}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -587,7 +587,7 @@ function PhcForm() {
                 fullWidth
                 name="jobType"
                 value={formData.jobType}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <MenuItem value={"government"}>Government</MenuItem>
                 <MenuItem value={"private"}>Private</MenuItem>
@@ -604,7 +604,7 @@ function PhcForm() {
             <MemberForm
               key={index}
               newMember={member}
-              handleMemberChange={(e: any) => handleMemberChange(e, index)}
+              handleMemberChange={(e) => handleMemberChange(e, index)}
             />
           ))}
           {memberForms.length > 0 && (
@@ -614,18 +614,7 @@ function PhcForm() {
           )}
         </form>
       </Wrapper>
-      <Dialog
-        open={openModal}
-        onClose={closeModal}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">Diabetes Preditions</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-          </DialogContentText>
-        </DialogContent>
-      </Dialog>
+      
     </>
   );
 }
