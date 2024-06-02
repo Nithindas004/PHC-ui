@@ -98,7 +98,7 @@ function PhcForm() {
   };
   const [formData, setFormData] = useState(defautValue);
   console.log(formData, "formData");
-  const handleChange = (e: SelectChangeEvent<string>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     const nameParts = name.split(".");
 
