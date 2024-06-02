@@ -16,7 +16,6 @@ import styled from "styled-components";
 import MemberForm from "./memberForm";
 import { createSurvey } from "@/api/workerApi";
 import Cookies from "js-cookie";
-import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 interface MemberData {
@@ -98,7 +97,7 @@ function PhcForm() {
   };
   const [formData, setFormData] = useState(defautValue);
   console.log(formData, "formData");
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     const nameParts = name.split(".");
 
@@ -173,7 +172,7 @@ function PhcForm() {
 
   const [memberForms, setMemberForms] = useState<MemberData[]>([]);
   console.log(memberForms, "memberForms");
-  const handleMemberChange = (e, index) => {
+  const handleMemberChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const { name, value } = e.target;
     const updatedMemberForms = [...memberForms];
     const nameParts = name.split(".");
