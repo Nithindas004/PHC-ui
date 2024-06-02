@@ -36,11 +36,5 @@ export const createWorker = async (workerData: any): Promise<any> => {
   }
 };
 
-export const predictDiabetes = async (data: any): Promise<any> => {
-  try {
-    const response = await axios.post(`${baseUrl}/diabetes/predict`, data);
-    return response.data;
-  } catch (error: any) {
-    throw error.response.data;
-  }
-};
+
+

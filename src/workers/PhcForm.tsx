@@ -19,7 +19,6 @@ import Cookies from "js-cookie";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import PredictionComponent from "./predictionComponent";
 interface MemberData {
   name: string;
   age: string;
