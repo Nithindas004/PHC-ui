@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3000/api/v1/admin";
+const baseUrl = "https://phc-backend-n4d7.onrender.com/api/v1/admin";
 
 // Login
 export const login = async (userData: any) => {

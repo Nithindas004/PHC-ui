@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3000/api/v1/worker";
+const baseUrl = "https://phc-backend-n4d7.onrender.com/api/v1/worker";
 
 export const loginWorker = async (userData: any): Promise<any> => {
   try {
