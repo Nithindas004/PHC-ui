@@ -97,7 +97,7 @@ function PhcForm() {
   };
   const [formData, setFormData] = useState(defautValue);
   console.log(formData, "formData");
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: SyntheticEvent<Element, Event>) => {
     const { name, value } = e.target;
     const nameParts = name.split(".");
 
@@ -196,7 +196,7 @@ function PhcForm() {
     }
     setMemberForms(updatedMemberForms);
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const payload = {
       workerId: workerId,
